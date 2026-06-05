@@ -69,3 +69,37 @@ footer{background:#1a3a5c;color:white;padding:2.5rem 0}
 .footer-right{font-size:.8rem;opacity:.7;text-align:right;line-height:1.7}
 .footer-right p{margin-bottom:.3rem}
 @media(max-width:700px){.hero h2{font-size:1.5rem}.contact-block{grid-template-columns:1fr}.footer-inner{flex-direction:column}.footer-right{text-align:left}nav{gap:1rem}}
+
+/* Homeowner Portal highlight card */
+.card-highlight {
+  border: 2px solid #1a3a5c;
+  background: linear-gradient(135deg, #1a3a5c 0%, #2d6a9f 100%);
+  color: white;
+}
+.card-highlight h3 { color: white; }
+.card-highlight p { color: rgba(255,255,255,0.9); }
+.card-link-primary {
+  background: white;
+  color: #1a3a5c !important;
+  padding: 8px 16px;
+  border-radius: 6px;
+  font-weight: 700;
+  display: inline-block;
+  margin-top: 8px;
+}
+.card-link-primary:hover {
+  background: #f0f4f8;
+  text-decoration: none;
+}
+.btn-secondary {
+  background: transparent;
+  border: 2px solid white;
+  color: white;
+  padding: 12px 28px;
+  border-radius: 6px;
+  font-weight: 600;
+  text-decoration: none;
+  margin: 6px;
+  display: inline-block;
+}
+.btn-secondary:hover { background: rgba(255,255,255,0.15); }
