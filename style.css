@@ -103,3 +103,13 @@ footer{background:#1a3a5c;color:white;padding:2.5rem 0}
   display: inline-block;
 }
 .btn-secondary:hover { background: rgba(255,255,255,0.15); }
+
+/* Community Resources */
+.resources-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-top: 2rem; }
+.resource-group h4 { font-family: 'Merriweather', serif; font-size: 1rem; color: #1a3a5c; margin: 1.2rem 0 0.5rem; border-bottom: 2px solid #e8f0fe; padding-bottom: 0.3rem; }
+.resource-group h4:first-child { margin-top: 0; }
+.resource-list { list-style: none; padding: 0; margin: 0 0 1rem; }
+.resource-list li { margin-bottom: 0.4rem; }
+.resource-list a { color: #2563eb; text-decoration: none; font-size: 0.95rem; transition: color 0.2s; }
+.resource-list a:hover { color: #1a3a5c; text-decoration: underline; }
+@media (max-width: 600px) { .resources-grid { grid-template-columns: 1fr; } }
