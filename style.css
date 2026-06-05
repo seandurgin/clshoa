@@ -1,0 +1,71 @@
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Open Sans',sans-serif;color:#333;background:#fff}
+.container{max-width:1100px;margin:0 auto;padding:0 2rem}
+header{background:#1a3a5c;color:white;padding:1rem 0;position:sticky;top:0;z-index:100;box-shadow:0 2px 8px rgba(0,0,0,.3)}
+.header-inner{max-width:1100px;margin:0 auto;padding:0 2rem;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem}
+.logo-block{display:flex;align-items:center;gap:1rem}
+.logo-icon{font-size:2rem}
+.logo-text h1{font-family:'Merriweather',serif;font-size:1.2rem;font-weight:700}
+.logo-text p{font-size:.8rem;opacity:.8}
+nav{display:flex;gap:1.5rem;flex-wrap:wrap}
+nav a{color:white;text-decoration:none;font-size:.9rem;font-weight:600;opacity:.85;transition:opacity .2s}
+nav a:hover{opacity:1}
+.hero{background:linear-gradient(135deg,#1a3a5c 0%,#2d6a9f 100%);color:white;padding:5rem 2rem;text-align:center}
+.hero-inner{max-width:700px;margin:0 auto}
+.hero h2{font-family:'Merriweather',serif;font-size:2.2rem;margin-bottom:1rem}
+.hero p{font-size:1.1rem;opacity:.9;margin-bottom:2rem;line-height:1.7}
+.hero-buttons{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap}
+.btn{padding:.8rem 2rem;border-radius:4px;font-weight:600;text-decoration:none;font-size:.95rem;transition:all .2s}
+.btn-primary{background:#c8a84b;color:#1a3a5c}
+.btn-primary:hover{background:#d4b85a}
+.btn-secondary{background:transparent;color:white;border:2px solid white}
+.btn-secondary:hover{background:rgba(255,255,255,.1)}
+.cards-section{padding:4rem 0;background:#f8f9fa}
+.cards-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1.5rem}
+.card{background:white;border-radius:8px;padding:2rem 1.5rem;text-align:center;box-shadow:0 2px 12px rgba(0,0,0,.08);transition:transform .2s}
+.card:hover{transform:translateY(-4px)}
+.card-icon{font-size:2.5rem;margin-bottom:1rem}
+.card h3{font-family:'Merriweather',serif;font-size:1rem;margin-bottom:.75rem;color:#1a3a5c}
+.card p{font-size:.88rem;color:#666;line-height:1.6;margin-bottom:1rem}
+.card-link{color:#2d6a9f;font-size:.88rem;font-weight:600;text-decoration:none}
+.card-link:hover{text-decoration:underline}
+.section{padding:5rem 0}
+.section-alt{background:#f4f7fb}
+.section-title{font-family:'Merriweather',serif;font-size:1.8rem;color:#1a3a5c;text-align:center;margin-bottom:.75rem}
+.section-sub{text-align:center;color:#666;max-width:650px;margin:0 auto 3rem;line-height:1.7;font-size:.95rem}
+.doc-list{display:flex;flex-direction:column;gap:1rem}
+.doc-item{background:white;border-radius:8px;padding:1.5rem;display:flex;align-items:center;gap:1.5rem;box-shadow:0 1px 6px rgba(0,0,0,.07);flex-wrap:wrap}
+.doc-icon{font-size:2rem;flex-shrink:0}
+.doc-info{flex:1;min-width:200px}
+.doc-info h4{color:#1a3a5c;font-size:.95rem;margin-bottom:.3rem}
+.doc-info p{color:#666;font-size:.85rem;line-height:1.5}
+.doc-badge{background:#e8f0fe;color:#2d6a9f;font-size:.78rem;font-weight:600;padding:.3rem .8rem;border-radius:20px;white-space:nowrap}
+.law-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.5rem;margin-bottom:2rem}
+.law-card{background:white;border-radius:8px;padding:1.5rem;box-shadow:0 1px 6px rgba(0,0,0,.07);border-left:4px solid #2d6a9f}
+.law-year{font-size:.75rem;font-weight:700;color:#2d6a9f;text-transform:uppercase;letter-spacing:.05em;margin-bottom:.4rem}
+.law-card h4{color:#1a3a5c;font-size:.92rem;margin-bottom:.6rem}
+.law-card p{font-size:.85rem;color:#555;line-height:1.6}
+.law-notice{background:#fff8e1;border:1px solid #f0d060;border-radius:8px;padding:1rem 1.5rem;font-size:.88rem;color:#7a6000}
+.board-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:1rem;margin-bottom:1rem}
+.board-card{background:#f4f7fb;border-radius:8px;padding:1.5rem 1rem;text-align:center}
+.board-role{font-size:.75rem;font-weight:700;color:#2d6a9f;text-transform:uppercase;letter-spacing:.05em;margin-bottom:.4rem}
+.board-name{font-size:.9rem;color:#1a3a5c;font-weight:600}
+.meetings-block{background:white;border-radius:8px;padding:2rem;margin-top:2rem;box-shadow:0 1px 6px rgba(0,0,0,.07)}
+.meetings-block h3{color:#1a3a5c;font-family:'Merriweather',serif;margin-bottom:.75rem}
+.meetings-block p{color:#666;font-size:.9rem;line-height:1.7}
+.faq-list{display:flex;flex-direction:column;gap:1rem;max-width:800px;margin:0 auto}
+.faq-item{background:white;border-radius:8px;overflow:hidden;box-shadow:0 1px 6px rgba(0,0,0,.07)}
+.faq-q{background:#1a3a5c;color:white;padding:1rem 1.5rem;font-weight:600;font-size:.92rem}
+.faq-a{padding:1rem 1.5rem;font-size:.88rem;color:#555;line-height:1.7}
+.contact-block{display:grid;grid-template-columns:1fr 1fr;gap:2rem}
+.contact-info{display:flex;flex-direction:column;gap:1.5rem}
+.contact-item{display:flex;flex-direction:column;gap:.3rem}
+.contact-label{font-weight:700;color:#1a3a5c;font-size:.88rem}
+.contact-item span:last-child{color:#555;font-size:.9rem;line-height:1.6}
+.contact-notice{background:#f4f7fb;border-radius:8px;padding:1.5rem;font-size:.88rem;color:#555;line-height:1.7}
+footer{background:#1a3a5c;color:white;padding:2.5rem 0}
+.footer-inner{display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:1.5rem}
+.footer-left{font-size:.9rem;line-height:1.7}
+.footer-right{font-size:.8rem;opacity:.7;text-align:right;line-height:1.7}
+.footer-right p{margin-bottom:.3rem}
+@media(max-width:700px){.hero h2{font-size:1.5rem}.contact-block{grid-template-columns:1fr}.footer-inner{flex-direction:column}.footer-right{text-align:left}nav{gap:1rem}}
