@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>HOA Assistant | Cool Springs at Charlestown</title>
+<link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+<header><nav>
+<div class="nav-brand">&#127968; Cool Springs at Charlestown HOA</div>
+<div class="nav-links">
+<a href="index.html">Home</a>
+<a href="hoa-assistant.html">HOA Assistant</a>
+<a href="https://tidewater.cincwebaxis.com/account/dashboard" target="_blank">&#127968; Homeowner Portal</a>
+</div>
+</nav></header>
+<main style="max-width:800px;margin:40px auto;padding:0 20px">
+<h1 style="color:#1a3a5c;text-align:center">&#127968; HOA Assistant</h1>
+<p style="text-align:center;color:#555;margin-bottom:24px">Ask me anything about Cool Springs at Charlestown.</p>
+<div id="box" style="border:1px solid #dde3ea;border-radius:12px;overflow:hidden;box-shadow:0 4px 20px rgba(0,0,0,.08)">
+<div id="msgs" style="height:420px;overflow-y:auto;padding:20px;display:flex;flex-direction:column;gap:14px;background:#f8fafc">
+<div style="display:flex;gap:10px"><div style="background:#1a3a5c;color:#fff;border-radius:50%;width:34px;height:34px;display:flex;align-items:center;justify-content:center;flex-shrink:0">&#127968;</div><div style="background:#fff;border:1px solid #dde3ea;border-radius:10px;padding:10px 14px;max-width:75%;font-size:.95rem;line-height:1.6">Hi! I am the Cool Springs at Charlestown HOA Assistant. Ask me about rules, assessments, parking, snow removal, and more!</div></div>
+</div>
+<div style="padding:12px 16px;background:#f0f4f8;border-top:1px solid #dde3ea;display:flex;flex-wrap:wrap;gap:8px">
+<span style="font-size:.8rem;color:#777;width:100%;margin-bottom:4px">&#128161; Try asking:</span>
+<button onclick="ask(this)" style="background:#fff;border:1px solid #1a3a5c;color:#1a3a5c;border-radius:20px;padding:5px 12px;font-size:.82rem;cursor:pointer">How do I pay my assessment?</button>
+<button onclick="ask(this)" style="background:#fff;border:1px solid #1a3a5c;color:#1a3a5c;border-radius:20px;padding:5px 12px;font-size:.82rem;cursor:pointer">Snow removal policy?</button>
+<button onclick="ask(this)" style="background:#fff;border:1px solid #1a3a5c;color:#1a3a5c;border-radius:20px;padding:5px 12px;font-size:.82rem;cursor:pointer">Parking rules?</button>
+<button onclick="ask(this)" style="background:#fff;border:1px solid #1a3a5c;color:#1a3a5c;border-radius:20px;padding:5px 12px;font-size:.82rem;cursor:pointer">How do I contact the board?</button>
+<button onclick="ask(this)" style="background:#fff;border:1px solid #1a3a5c;color:#1a3a5c;border-radius:20px;padding:5px 12px;font-size:.82rem;cursor:pointer">What needs board approval?</button>
+</div>
+<div style="padding:14px 18px;background:#fff;border-top:1px solid #dde3ea;display:flex;gap:10px">
+<input id="inp" type="text" placeholder="Ask a question about the HOA..." onkeypress="if(event.key==='Enter ')send()" style="flex:1;padding:11px 14px;border:1px solid #dde3ea;border-radius:8px;font-size:.95rem;outline:none"/>
+<button id="btn" onclick="send()" style="background:#1a3a5c;color:#fff;border:none;border-radius:8px;padding:11px 18px;cursor:pointer;font-size:.95rem">Send &#10148;</button>
+</div></div>
+<p style="text-align:center;font-size:.78rem;color:#999;margin-top:14px">&#9888;&#65039; General guidance only. Consult governing documents or the board for official rulings.</p>
+</main>
+<script>
+var H=[];
+function ask(b){document.getElementById("inp").value=b.textContent;send();}
+function add(r,t){
+var c=document.getElementById("msgs"),d=document.createElement("div");
+var u=(r==="u");
+d.style.cssText="display:flex;gap:10px;"+(u?"flex-direction:row-reverse":"");
+var av=document.createElement("div");
+av.style.cssText=(u?"background:#2563eb":"background:#1a3a5c")+";color:#fff;border-radius:50%;width:34px;height:34px;display:flex;align-items:center;justify-content:center;flex-shrink:0";
+av.innerHTML=u?"&#128100;":"&#127968;";
+var bl=document.createElement("div");
+bl.style.cssText="max-width:75%;padding:10px 14px;border-radius:10px;font-size:.95rem;line-height:1.6;"+(u?"background:#2563eb;color:#fff":"background:#fff;border:1px solid #dde3ea;color:#1a1a1a");
+bl.innerHTML=t.replace(/\n/g,"<br>");
+d.appendChild(av);d.appendChild(bl);
+c.appendChild(d);c.scrollTop=c.scrollHeight;return d;}
+async function send(){
+var i=document.getElementById("inp"),b=document.getElementById("btn"),t=i.value.trim();
+if(!t)return;i.value="";b.disabled=true;
+add("u",t);H.push({role:"user",content:t});
+var td=add("b","Thinking...");
+try{
+var r=await fetch("/api/claude",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({messages:H})});
+var d=await r.json();td.remove();
+var rep=(d.content&&d.content[0])?d.content[0].text:"Sorry, I had trouble responding.";
+H.push({role:"assistant",content:rep});add("b",rep);
+}catch(e){td.remove();add("b","Sorry, something went wrong. Please try again.");}
+b.disabled=false;i.focus();}
+</script></body></html>
